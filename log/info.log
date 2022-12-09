@@ -6822,3 +6822,9 @@
 {"level":"info","message":"BBfefeii88","timestamp":"2022-12-09 04:08:09 PM +0100"}
 {"level":"info","message":"--->CONTENU: emailCryptoJs - contollers/auth","timestamp":"2022-12-09 04:08:09 PM +0100"}
 {"level":"info","message":"2d3df4667301a85fae67c8c877f82d836e296f3c7dcd14598d5287f42f6f1f83","timestamp":"2022-12-09 04:08:09 PM +0100"}
+{"level":"info","message":"init","timestamp":"2022-12-09 04:38:48 PM +0100"}
+{"level":"info","message":"test","timestamp":"2022-12-09 04:38:48 PM +0100"}
+{"level":"info","message":"Connexion à MongoDB réussie !","timestamp":"2022-12-09 04:38:49 PM +0100"}
+{"level":"info","message":"init","timestamp":"2022-12-09 04:55:19 PM +0100"}
+{"level":"info","message":"test","timestamp":"2022-12-09 04:55:19 PM +0100"}
+{"level":"info","message":"Connexion à MongoDB réussie !","timestamp":"2022-12-09 04:55:20 PM +0100"}

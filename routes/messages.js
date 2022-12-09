@@ -22,7 +22,7 @@ const messagesCtrl = require('../controllers/messages');
 router.post('/messages',/* auth, multer,*/ messagesCtrl.createMessage);
 router.get('/',auth  , messagesCtrl.getActual);
 
-router.post('/',/* auth, multer,*/ messagesCtrl.createMessage);
+
 
 /*router.put('/:id', auth, multer,sauceCtrl.modifySauce);
 router.delete('/:id', auth , sauceCtrl.deleteSauce);
