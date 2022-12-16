@@ -1,4 +1,5 @@
 const Message = require('../models/message');
+
 const log = require('../utils/winston');
 const fs = require('fs');
 const { json } = require('express');
@@ -9,22 +10,24 @@ const { json } = require('express');
 
 
 
-exports.createMessage = (req, res, next) => {
+ exports.createMessage = (req, res, next) => {
 
 
     try {
 
-        console.log(JSON.stringify(req.body));
+  console.log(JSON.stringify(req.body));
 
-        const messageObject = JSON.parse(req.body.message);
+       const messageObject = (req.body);
+        //delete messageObject._id;
+        //delete messageObject._userId;
         console.log(req.auth);
 
-        const message = new Message({
-
-            ...messageObject,
+    const message = new Message({
+      
+           ...messageObject,
             userId: req.auth.userId,
 
-          //  imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`*/
+           // imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
 
           
 
@@ -35,8 +38,8 @@ exports.createMessage = (req, res, next) => {
         //Enregistrer l'objet ds la base
             message.save()
             .then(() => { res.status(201).json({ message: 'Objet enregistré !' }) })
-            .catch(error => { res.status(400).json({ error }) });
-
+                .catch(error => { log.error(`error dans create message ${error}`); res.status(400).json({ error }) });
+;
     }
     catch (error) {
 log.error(`error dans create message ${error}`);
@@ -46,22 +49,20 @@ log.error(`error dans create message ${error}`);
 };
 
 exports.getActual = (_req, res) => {
-   
-    try { 
+
+    try {
 
         Message.find()
-        .then(_message => res.status(200).json(sauces))
-        .catch(error => res.status(400).json({ error }));
+            .then(message => res.status(200).json(message))
+            .catch(error => res.status(400).json({ error }));
 
     }
     catch (error) {
-log.error(`error dans create test ${error}`);
-     return res.status(500).json({ error });
+        log.error(`error dans create test ${error}`);
+        return res.status(500).json({ error });
     }
 
 };
-
-
 
 
 

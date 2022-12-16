@@ -5,6 +5,7 @@ const log = require("../utils/winston");
 const sanitize = require("mongo-sanitize");
 const { stringifyStyle } = require("@vue/shared");
 const { Console } = require("console");
+const { any } = require("webidl-conversions");
 
 //Création de nouveau user à partir de l'app frontend
 //On récupere le hash du mot de passe que l'on va enregistrer ds un nouveau user ds la base de donnée
@@ -32,7 +33,8 @@ exports.signup = (req, res, next) => {
       bcrypt.hash(req.body.password, 10)
          .then(hash => {
             log.info(hash);
-            const user = new User({
+           const user = new User({
+              name:req.body.name,
                email: emailCryptoJs,
                password: hash,
 

@@ -13,7 +13,6 @@ const sauceCtrl = require('../controllers/sauces');
 //On veut que l'id de sauce(objet en vente) soit le même que le param de requête.
 //on rajoute l'url visée par l'application(la route)
 //On va utiliser la methode find, on veut la liste complete des objets, on récupère le tableau de la collection sauce (things)retournés  par la base de donnée et on les renvoie avec un code 200.
-
 router.post('/', auth, multer, sauceCtrl.createSauce);
 router.put('/:id', auth, multer,sauceCtrl.modifySauce);
 router.delete('/:id', auth , sauceCtrl.deleteSauce);

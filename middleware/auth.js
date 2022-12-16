@@ -9,7 +9,8 @@ console.log(exports)
       const userId = decodedToken.userId;
       req.auth = {
          userId: userId
-       }; 
+      }; 
+    
       if (req.body.userId && req.body.userId !== userId) {
          throw "requête non authentifiée !";
      } else {

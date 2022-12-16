@@ -14,7 +14,7 @@ const saucesRoutes = require('./routes/sauces');
 const path = require('path');
 const testRoutes = require('./routes/test');
 const log =require('./utils/winston');
-log.info("test");
+log.info("messages");
 const helmet = require("helmet");
 const { Console } = require('console');
 //Strict-Transport-Policy , indique au navigateur de préférer HTTPS à HTTP
